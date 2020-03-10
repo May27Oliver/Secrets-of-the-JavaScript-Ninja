@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*在程式開始執行前，對console.time()方法的呼叫會啟動一個計時器，並賦予它一個名稱（這裡是operation），
+    然後我們在for迴圈中執行一項操作許多次，獲得可測量的數值。通常這個次數需要是幾萬次的，用試誤法找出一個合理值
+    */ 
+    console.time("My Operation");      //啟動計時器
+
+    for(var n = 0;n < maxCount; n++){
+        /*需測量的內容*/
+    }
+
+    console.timeEnd("My Operation");    //停止計時器
+</script>
+</body>
+</html>

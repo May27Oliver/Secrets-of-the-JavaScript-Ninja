@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    /*
+    assert(condition,message);
+
+    assert(a===1,"Disaster,a is not 1");
+
+    以參數一為判斷條件，為真就印出參數二的結果 
+    */ 
+    var text="Domo arigato!";
+    report("Before defining functions");
+
+    function useless(ninjaCallback){
+        report("In useless function");
+        return ninjaCallback();
+    }
+
+    function getText(){
+        report("In getText function");
+        return text;
+    }
+
+    report("Before making all the calls");
+
+    assert(useless(getText)===text,
+    "The useless function works!"+text);
+
+    report("After the calls have been made");
+</script>
+<body>
+    
+</body>
+</html>

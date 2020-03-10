@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="assert.js"></script>
+<script>
+    // 儲存函式
+    var store = {
+        nextId:1,
+        cache:{},
+        add:function(fn){//如果丟進來的函式中不存在id，表示沒有丟進來過，透過add方法把function存到cache這個物件之中，並給予id
+            if(!fn.id){
+                fn.id = this.nextId++;
+                this.cache[fn.id] = fn;
+                return true;
+            }
+        }
+    };
+    //assert函式是ninja自定義的function，用來驗證功能是否如預期地進行。
+    function ninja(){}
+    assert(store.add(ninja),
+    "Function was safely added.");
+    assert(!store.add(ninja),
+    "But it was only added once.");
+</script>
+</body>
+</html>

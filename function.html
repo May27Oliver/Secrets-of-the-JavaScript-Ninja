@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// 物件在javaScript具有某些特性：
+/*  1.可藉由實值來建立：{}
+    2.它們可以被指派給變數、陣列資料項或其他物件屬性
+    var ninja={}
+    ninjaArray.push({});
+    ninja.data={};
+*/ 
+
+
+// 將function安排進陣列之中，再藉由陣列的索引call它; 
+let arr=[];
+arr.push(function(){
+    console.log('我是Oliver');
+});
+
+arr.push(function(){
+    console.log("我寫程式");
+});
+
+arr[0]();
+
+// 將function指定進物件之中，再藉由物件的點語法呼叫之。
+let obj={};
+
+obj.sayhi=function(){
+    console.log('妳好');
+}
+
+obj.thx=function(){
+    console.log('謝謝');
+}
+
+obj.sayhi();
+
+//將函式做為參數傳遞給函式，傑弘特愛用這個
+function call(ninjaFunction){
+    ninjaFunction();
+}
+
+call(function(){
+    console.log('I love Leticia');
+});
+
+// 作為函式的回傳值
+function returnNewNinjaFunction(){
+    return function(){
+        console.log('Marry me,please');
+    }();
+}
+returnNewNinjaFunction();
+
+//動態建立和指派屬性
+var ninjaNinja=function(){
+    ninjaNinja.ninja ='Leticia';
+}
+</script>
+</body>
+</html>
