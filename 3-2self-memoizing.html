@@ -5,7 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script src="assert.js"></script>
 <body>
+<script>
+    // 計算輸入數字是否為質數，並把計算出的答案儲存在函式的快取物件中，避免重複計算
+    function isPrime(value){//建立快取
+        if(!isPrime.answers){
+            isPrime.answers = {};
+        }
+
+        if(isPrime.answers[value]!==undefined){//檢查已經被快取的值
+        return isPrime.answers[value];
+        }
+
+        var prime = value !==0 && value !==1;
+
+        for(var i =2 ; i < value ;i++){
+            if(value %i===0){
+                prime = false;
+                break;
+            }
+        }
+        return isPrime.answers[value]=prime;
+    }
+
+    assert(isPrime(5),"5 is Prime!");
+    assert(isPrime.answers[5],"the answer was cached!");
+
     
+
+</script>
 </body>
 </html>

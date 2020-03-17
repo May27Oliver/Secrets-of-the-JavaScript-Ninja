@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="assert.js"></script>
+<body>
+<script>
+    // function performAction(ninja,action = "skulking"){
+    //     return ninja + " " + action;
+    // }
+    // 記得""要控一格
+    // assert(performAction("Fuma")==="Fuma skulking",
+    // "The default value is used for Fuma");
+    // assert(performAction("Yagyu","sneaking")==="Yagyu sneaking",
+    // "Yagyu can do whatever he pleases,even sneak!");
+
+    // 在參數中使用已定義參數進行運算
+    function performAction(ninja,action="skulking",message = ninja +" "+action){
+        return message;
+    }
+
+    assert(performAction("Fuma")==="Fuma skulking",
+    "The default value is used for Fuma");
+</script>
+</body>
+</html>
